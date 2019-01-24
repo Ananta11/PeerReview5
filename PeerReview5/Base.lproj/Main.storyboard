@@ -1,26 +1,115 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="k40-40-c8v">
+                                <rect key="frame" x="4" y="40" width="406" height="27"/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="56v-3f-suv">
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="shareFacebook:" destination="BYZ-38-t0r" id="nAa-yT-mLM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="bPj-03-hfT"/>
+                                    <barButtonItem systemItem="action" id="4gw-8c-nfS">
+                                        <color key="tintColor" red="0.33049378409116448" green="1" blue="0.87042301200186278" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="shareTweet:" destination="BYZ-38-t0r" id="akw-xE-wFu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="LjA-qT-edN"/>
+                                    <barButtonItem systemItem="action" id="j22-fo-vbI">
+                                        <color key="tintColor" red="1" green="0.4636057364196785" blue="0.95554371073637212" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="shareMore:" destination="BYZ-38-t0r" id="WLo-fr-olY"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="HOa-OW-lU3"/>
+                                    <barButtonItem systemItem="action" id="C47-55-t5G">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="ShareNothing:" destination="BYZ-38-t0r" id="LFv-wj-rTB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="i5M-RN-YHm">
+                                <rect key="frame" x="0.0" y="67" width="414" height="669"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="*Post to Facebook*" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wem-jg-Idz">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="223"/>
+                                        <color key="backgroundColor" red="0.98511420510383063" green="0.99412205786482688" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="*Tweet*" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BH1-gP-GR9">
+                                        <rect key="frame" x="0.0" y="223" width="414" height="223"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="*More*" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="im9-7Y-AIp">
+                                        <rect key="frame" x="0.0" y="446" width="414" height="223"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="im9-7Y-AIp" firstAttribute="height" secondItem="Wem-jg-Idz" secondAttribute="height" id="3Vc-GY-kHk"/>
+                                    <constraint firstItem="BH1-gP-GR9" firstAttribute="height" secondItem="Wem-jg-Idz" secondAttribute="height" id="cNB-Eg-HE9"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="i5M-RN-YHm" secondAttribute="trailing" id="M0g-IV-WyH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="i5M-RN-YHm" secondAttribute="bottom" id="Mja-yd-p1d"/>
+                            <constraint firstItem="i5M-RN-YHm" firstAttribute="top" secondItem="k40-40-c8v" secondAttribute="bottom" id="Nvf-QM-vRB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k40-40-c8v" secondAttribute="trailing" constant="-16" id="Rrg-7n-F5Y"/>
+                            <constraint firstItem="k40-40-c8v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="ZfQ-B4-481"/>
+                            <constraint firstItem="i5M-RN-YHm" firstAttribute="top" secondItem="k40-40-c8v" secondAttribute="bottom" id="aI7-qO-Id2"/>
+                            <constraint firstItem="i5M-RN-YHm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hWk-OD-qi9"/>
+                            <constraint firstItem="k40-40-c8v" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="nc3-wW-B2o"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="i5M-RN-YHm" secondAttribute="bottom" id="oQO-vY-ipc"/>
+                            <constraint firstItem="i5M-RN-YHm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pwt-fb-OG2"/>
+                            <constraint firstAttribute="trailing" secondItem="i5M-RN-YHm" secondAttribute="trailing" id="wIP-vl-qAT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="FacebookPostButton" destination="56v-3f-suv" id="liz-fJ-eZc"/>
+                        <outlet property="FacebookTextView" destination="Wem-jg-Idz" id="mQl-tx-pZN"/>
+                        <outlet property="MoreTextView" destination="im9-7Y-AIp" id="snj-iC-uVI"/>
+                        <outlet property="NullButton" destination="C47-55-t5G" id="2BS-Gv-h4o"/>
+                        <outlet property="ShareButton" destination="j22-fo-vbI" id="vcI-e7-MAJ"/>
+                        <outlet property="TweetButton" destination="4gw-8c-nfS" id="E1r-Ci-aJv"/>
+                        <outlet property="TweetTextView" destination="BH1-gP-GR9" id="rIf-e8-F6o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
